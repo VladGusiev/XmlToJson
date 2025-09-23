@@ -1,4 +1,4 @@
-package org.example.xml_to_json.model;
+package org.example.xmltojson.model;
 
 public class Flower {
 

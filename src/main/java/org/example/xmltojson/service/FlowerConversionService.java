@@ -1,9 +1,9 @@
-package org.example.xml_to_json.service;
+package org.example.xmltojson.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
-import org.example.xml_to_json.model.Flower;
+import org.example.xmltojson.model.Flower;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
