@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower Converter</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header>
+    <h1>XML <=> JSON</h1>
+</header>
+<main>
+    <div class="input-row">
+        <textarea id="input" placeholder="Enter input (XML/JSON)..."></textarea>
+        <textarea id="output" placeholder="Output..." readonly></textarea>
+    </div>
+    <div class="button-row">
+        <button type="button" id="convertBtn">Convert</button>
+    </div>
+</main>
+
+</body>
+</html>
