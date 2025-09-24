@@ -29,12 +29,12 @@ public class XmlToJsonApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // XML to JSON
-        Flower flowerFromXml = conversionService.readXml(new ClassPathResource("static/flower.xml"));
+        Flower flowerFromXml = conversionService.readXml(new ClassPathResource("static/xmlText.txt"));
         String json = conversionService.toJson(flowerFromXml);
         log.info("This is JSON: {}", json);
 
         // JSON to XML
-        Flower flowerFromJson = conversionService.readJson(new ClassPathResource("static/flower.json"));
+        Flower flowerFromJson = conversionService.readJson(new ClassPathResource("static/JsonText.txt"));
         String xml = conversionService.toXml(flowerFromJson);
         log.info("This is XML: {}", xml);
     }

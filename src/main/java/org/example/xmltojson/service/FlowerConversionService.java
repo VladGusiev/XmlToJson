@@ -1,6 +1,7 @@
 package org.example.xmltojson.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import org.example.xmltojson.model.Flower;
@@ -27,17 +28,25 @@ public class FlowerConversionService {
         }
     }
 
+    public Flower readXml(String xml) throws IOException {
+        return xmlMapper.readValue(xml, Flower.class);
+    }
+
     public Flower readJson(Resource jsonResource) throws IOException {
         try (InputStream is = jsonResource.getInputStream()) {
             return objectMapper.readValue(is, Flower.class);
         }
     }
 
+    public Flower readJson(String json) throws IOException {
+        return objectMapper.readValue(json, Flower.class);
+    }
+
     public String toJson(Flower flower) throws IOException {
-        return objectMapper.writeValueAsString(flower);
+        return objectMapper.enable(SerializationFeature.INDENT_OUTPUT).writeValueAsString(flower);
     }
 
     public String toXml(Flower flower) throws IOException {
-        return xmlMapper.writeValueAsString(flower);
+        return xmlMapper.enable(SerializationFeature.INDENT_OUTPUT).writeValueAsString(flower);
     }
 }

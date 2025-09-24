@@ -10,13 +10,15 @@
     <h1>XML <=> JSON</h1>
 </header>
 <main>
-    <div class="input-row">
-        <textarea id="input" placeholder="Enter input (XML/JSON)..."></textarea>
-        <textarea id="output" placeholder="Output..." readonly></textarea>
-    </div>
-    <div class="button-row">
-        <button type="button" id="convertBtn">Convert</button>
-    </div>
+    <form th:action="@{/convert}" method="post">
+        <div class="input-row">
+            <textarea id="input" name="input" placeholder="Enter XML..." th:text="${input}"></textarea>
+            <textarea id="output" name="output" placeholder="Output..." readonly th:text="${output}"></textarea>
+        </div>
+        <div class="button-row">
+            <button type="submit" id="convertBtn">Convert</button>
+        </div>
+    </form>
 </main>
 
 </body>
